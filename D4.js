@@ -86,14 +86,44 @@ console.log(reverseString("EPICODE"));
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
-function upperFirst(fst) {
+/*function upperFirst(fst) {
   fst.charAt(0).toUpperCase();
-  for (i = 1; i < fst.length; i++) {
+  for (let i = 1; i < fst.length; i++) {
     if (fst.charAt(i - 1) === " ") {
       fst.charAt(i).toUpperCase();
     }
   }
   return fst;
+}
+   */
+/*function upperFirst(str) {
+  let words = str.split(" ");
+  let completeSentence = "";
+  for (let i = 0; i < words.length; i++) {
+    let w = words[i];
+    let firstLetter = w.charAt(0).toUpperCase();
+    let remainingLetters = w.slice(1);
+    let completeWord = firstLetter + remainingLetters;
+    completeSentence += completeWord + " ";
+    console.log(completeWord);
+  }
+  console.log(completeSentence);
+}
+console.log(upperFirst("mi piace il mango")); */
+
+function upperFirst(str) {
+  let words = str.split(" ");
+  let wordsCapitalized = [];
+  for (let i = 0; i < words.length; i++) {
+    let w = words[i];
+    let firstLetter = w.charAt(0).toUpperCase();
+    let remainingLetters = w.slice(1);
+    let completeWord = firstLetter + remainingLetters;
+    wordsCapitalized.push(completeWord);
+  }
+  console.log(wordsCapitalized);
+  let completeSentence = wordsCapitalized.join(" ");
+  return completeSentence;
 }
 console.log(upperFirst("mi piace il mango"));
 /* ESERCIZIO 9
@@ -101,13 +131,20 @@ console.log(upperFirst("mi piace il mango"));
  della stringa originale.
 */
 
-function cutString(cts) {
-  cts.substring(1, cts.length - 1);
-  return cts;
-}
-
+const cutString = function (str) {
+  return str.slice(1, str.length - 1);
+};
+console.log(cutString("EPICODE"));
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+{
+}
+function giveMeRandom(n) {
+  let numbers = [];
+  for (i = 0; i < numbers.length; i++) {
+    numbers.push(Math.floor(Math.random() * 10));
+  }
+  return numbers;
+}
+console.log(giveMeRandom(3));
